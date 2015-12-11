@@ -10,6 +10,10 @@ module.exports = {
   },
 
   contentFor: function(type, config) {
+    if (!config.loadGoogleAPI) {
+      return '';
+    };
+
     var content = '';
 
     if (type === 'head') {
