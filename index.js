@@ -12,10 +12,6 @@ module.exports = {
   contentFor: function(type, config) {
     var gMapConfig = config['g-map'] || {};
 
-    if (!gMapConfig.loadGoogleAPI) {
-      return '';
-    };
-
     var content = '';
 
     if (type === 'head') {
@@ -29,7 +25,7 @@ module.exports = {
 
       var libraries = gMapConfig.libraries;
       if (libraries && libraries.length) {
-        params.push('libraries=' + encodeURIComponent(libraries.join(',')));
+        //params.push('libraries=' + encodeURIComponent(libraries.join(',')));
       }
 
       src += '?' + params.join('&');
