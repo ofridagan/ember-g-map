@@ -10,7 +10,9 @@ module.exports = {
   },
 
   contentFor: function(type, config) {
-    if (!config.loadGoogleAPI) {
+    var gMapConfig = config['g-map'] || {};
+
+    if (!gMapConfig.loadGoogleAPI) {
       return '';
     };
 
@@ -18,7 +20,6 @@ module.exports = {
 
     if (type === 'head') {
       var src = "//maps.googleapis.com/maps/api/js";
-      var gMapConfig = config['g-map'] || {};
       var params = [];
 
       var key = gMapConfig.key;
